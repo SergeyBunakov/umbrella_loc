@@ -149,13 +149,41 @@
         @apply font-semibold text-[44px] leading-normal tracking-[-0.002em] md:text-4xl sm:text-3xl;
     }
 
-    .accordion-item.active > .accordion-content {
+    /*.accordion-item.active > .accordion-content {
         display: block;
     }
 
     .accordion-item.active .accordion-img {
         --tw-rotate: 180deg;
         transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    }*/
+
+    @utility accordion-item {
+        &.active > .accordion-content {
+            display: block;
+        }
+
+        &.active .accordion-img {
+            --tw-rotate: 180deg;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+            rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+            scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+        }
+    }
+
+    @utility accordion-content {
+        .accordion-item.active > & {
+            display: block;
+        }
+    }
+
+    @utility accordion-img {
+        .accordion-item.active & {
+            --tw-rotate: 180deg;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+            rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+            scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+        }
     }
 
     [data-tooltip] {
