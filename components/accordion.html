@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Accordion</title>
+    <style>
+      .section-title {
+        @apply font-semibold text-[44px] leading-normal tracking-[-0.002em] md:text-4xl sm:text-3xl;
+      }
+      .accordion-item.active > .accordion-content {
+        display: block;
+      }
+
+      .accordion-item.active .accordion-img {
+        --tw-rotate: 180deg;
+        transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+          rotate(var(--tw-rotate)) skewX(var(--tw-skew-x))
+          skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x))
+          scaleY(var(--tw-scale-y));
+      }
+
+      .text-blueviolet {
+        color: #5027b5;
+      }
+
+      @keyframes fade-in {
+        from {
+          opacity: 0;
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
+
+      .animate-fadeIn {
+        animation: 0.3s fade-in ease-in-out;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="py-20 sm:py-10">
+      <h2 class="section-title text-center">FAQ</h2>
+
+      <!-- Accordion -->
+      <div
+        class="mx-auto mt-10 flex max-w-[1000px] flex-col gap-10 md:gap-5 md:px-5"
+      >
+        <!-- Accordion Item 1 -->
+        <div class="accordion-item">
+          <!-- Trigger -->
+          <button
+            class="accordion-trigger mt-5 flex w-full items-center justify-between"
+          >
+            <span
+              class="block pr-5 text-left text-3xl font-medium text-blueviolet md:text-xl"
+              >Яка різниця між ліктьовою та балконною маркізою?</span
+            >
+
+            <img
+              class="accordion-img transition-transform"
+              src="./img/icons/chevron-down.svg"
+              alt="chevron"
+            />
+          </button>
+
+          <!-- Content -->
+          <p
+            class="accordion-content mt-4 hidden animate-fadeIn px-10 text-base tracking-[-0.002em] text-lightgray md:px-4"
+          >
+            Ліктьова маркіза підходить для великих площ, тоді як балконна - для
+            менших відкритих просторів.
+          </p>
+        </div>
+
+        <!-- Accordion Item 2 -->
+        <div class="accordion-item">
+          <!-- Trigger -->
+          <button
+            class="accordion-trigger mt-5 flex w-full items-center justify-between"
+          >
+            <span
+              class="block pr-5 text-left text-3xl font-medium text-blueviolet md:text-xl"
+            >
+              Яка система є найбільш популярною?</span
+            >
+
+            <img
+              class="accordion-img transition-transform"
+              src="./img/icons/chevron-down.svg"
+              alt="chevron"
+            />
+          </button>
+
+          <!-- Content -->
+          <p
+            class="accordion-content mt-4 hidden animate-fadeIn px-10 text-base tracking-[-0.002em] text-lightgray md:px-4"
+          >
+            Система на замках з москітною сіткою найчастіше обирається для
+            забезпечення захисту від комах.
+          </p>
+        </div>
+
+        <!-- Accordion Item 3 -->
+        <div class="accordion-item">
+          <!-- Trigger -->
+          <button
+            class="accordion-trigger mt-5 flex w-full items-center justify-between"
+          >
+            <span
+              class="block pr-5 text-left text-3xl font-medium text-blueviolet md:text-xl"
+              >Які матеріали використовуються для виготовлення вуличних
+              парасоль?</span
+            >
+            <img
+              class="accordion-img transition-transform"
+              src="./img/icons/chevron-down.svg"
+              alt="chevron"
+            />
+          </button>
+          <!-- Content -->
+          <p
+            class="accordion-content mt-4 hidden animate-fadeIn px-10 text-base tracking-[-0.002em] text-lightgray md:px-4"
+          >
+            Ми пропонуємо парасолі з деревини та металу, що забезпечують
+            довговічність і стиль.
+          </p>
+        </div>
+
+        <!-- Accordion Item 4 -->
+        <div class="accordion-item">
+          <!-- Trigger -->
+          <button
+            class="accordion-trigger mt-5 flex w-full items-center justify-between"
+          >
+            <span
+              class="block pr-5 text-left text-3xl font-medium text-blueviolet md:text-xl"
+              >Яка терасна дошка є найстійкішою до погодних умов?</span
+            >
+
+            <img
+              class="accordion-img transition-transform"
+              src="./img/icons/chevron-down.svg"
+              alt="chevron"
+            />
+          </button>
+
+          <!-- Content -->
+          <p
+            class="accordion-content mt-4 hidden animate-fadeIn px-10 text-base tracking-[-0.002em] text-lightgray md:px-4"
+          >
+            Терасна дошка Tardex Professional має підвищену стійкість до вологи
+            та UV-випромінювання.
+          </p>
+        </div>
+
+        <!-- Accordion Item 5 -->
+        <div class="accordion-item">
+          <!-- Trigger -->
+          <button
+            class="accordion-trigger mt-5 flex w-full items-center justify-between"
+          >
+            <span
+              class="block pr-5 text-left text-3xl font-medium text-blueviolet md:text-xl"
+            >
+              Чи можна замовити перголу під індивідуальні розміри?</span
+            >
+
+            <img
+              class="accordion-img transition-transform"
+              src="./img/icons/chevron-down.svg"
+              alt="chevron"
+            />
+          </button>
+
+          <!-- Content -->
+          <p
+            class="accordion-content mt-4 hidden animate-fadeIn px-10 text-base tracking-[-0.002em] text-lightgray md:px-4"
+          >
+            Так, ми можемо виготовити перголу за вашими розмірами та
+            побажаннями.
+          </p>
+        </div>
+
+        <!-- Accordion Item 6 -->
+        <div class="accordion-item">
+          <!-- Trigger -->
+          <button
+            class="accordion-trigger mt-5 flex w-full items-center justify-between"
+          >
+            <span
+              class="block pr-5 text-left text-3xl font-medium text-blueviolet md:text-xl"
+              >Які переваги скляних перегородок?</span
+            >
+
+            <img
+              class="accordion-img transition-transform"
+              src="./img/icons/chevron-down.svg"
+              alt="chevron"
+            />
+          </button>
+
+          <!-- Content -->
+          <p
+            class="accordion-content mt-4 hidden animate-fadeIn px-10 text-base tracking-[-0.002em] text-lightgray md:px-4"
+          >
+            Вони забезпечують елегантний вигляд і дозволяють зберегти природне
+            освітлення.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Accordion
+      function accordion() {
+        const items = document.querySelectorAll(".accordion-trigger");
+
+        items.forEach((item) => {
+          item.addEventListener("click", () => {
+            const parent = item.parentNode;
+
+            if (parent.classList.contains("active")) {
+              parent.classList.remove("active");
+            } else {
+              document
+                .querySelectorAll(".accordion-item")
+                .forEach((child) => child.classList.remove("active"));
+
+              parent.classList.add("active");
+            }
+          });
+        });
+      }
+
+      accordion();
+    </script>
+  </body>
+</html>

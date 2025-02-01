@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>TW_Slider</title>
+    <link rel="shortcut icon" href="../build/favicon.ico" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-neutral-300">
+    <section>
+      <div class="relative w-full overflow-hidden">
+        <!-- Indicators -->
+        <div
+          class="absolute bottom-4 left-0 right-0 mx-auto flex justify-center space-x-2 z-10"
+        >
+          <button
+            type="button"
+            class="h-3 w-3 rounded-full bg-red-500 opacity-50 transition-opacity duration-300"
+            data-slide="0"
+          ></button>
+          <button
+            type="button"
+            class="h-3 w-3 rounded-full bg-red-500 opacity-50 transition-opacity duration-300"
+            data-slide="1"
+          ></button>
+          <button
+            type="button"
+            class="h-3 w-3 rounded-full bg-red-500 opacity-50 transition-opacity duration-300"
+            data-slide="2"
+          ></button>
+        </div>
+
+        <!-- Slides -->
+        <div
+          id="slides"
+          class="flex transition-transform duration-500 ease-in-out"
+        >
+          <div class="w-full flex-shrink-0">
+            <img
+              src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(15).webp"
+              alt="Slide 1"
+              class="w-full"
+            />
+          </div>
+          <div class="w-full flex-shrink-0">
+            <img
+              src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(22).webp"
+              alt="Slide 2"
+              class="w-full"
+            />
+          </div>
+          <div class="w-full flex-shrink-0">
+            <img
+              src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(23).webp"
+              alt="Slide 3"
+              class="w-full"
+            />
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <button
+          id="prev"
+          class="absolute top-1/2 left-4 z-10 -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700"
+        >
+          Prev
+        </button>
+        <button
+          id="next"
+          class="absolute top-1/2 right-4 z-10 -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700"
+        >
+          Next
+        </button>
+      </div>
+    </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const slidesContainer = document.getElementById("slides");
+        const slides = document.querySelectorAll("#slides > div");
+        const prevButton = document.getElementById("prev");
+        const nextButton = document.getElementById("next");
+        const indicators = document.querySelectorAll("[data-slide]");
+
+        let currentIndex = 0; // Поточний індекс слайда
+        const totalSlides = slides.length;
+
+        // Оновлює зсув і активний індикатор
+        function updateSlider(index) {
+          const offset = index * -100;
+          slidesContainer.style.transform = `translateX(${offset}%)`;
+
+          indicators.forEach((indicator, i) => {
+            indicator.classList.toggle("opacity-100", i === index); // Активний індикатор
+            indicator.classList.toggle("opacity-50", i !== index); // Неактивний індикатор
+          });
+        }
+
+        // Переходить на наступний слайд
+        function showNextSlide() {
+          currentIndex = (currentIndex + 1) % totalSlides;
+          updateSlider(currentIndex);
+        }
+
+        // Переходить на попередній слайд
+        function showPrevSlide() {
+          currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+          updateSlider(currentIndex);
+        }
+
+        // Перехід на конкретний слайд при натисканні на індикатор
+        indicators.forEach((indicator) => {
+          indicator.addEventListener("click", () => {
+            currentIndex = Number(indicator.getAttribute("data-slide"));
+            updateSlider(currentIndex);
+          });
+        });
+
+        // Прив'язка подій до кнопок
+        nextButton.addEventListener("click", showNextSlide);
+        prevButton.addEventListener("click", showPrevSlide);
+
+        // Автоматична зміна слайдів
+        setInterval(showNextSlide, 5000);
+
+        // Ініціалізація (відображає перший слайд)
+        updateSlider(currentIndex);
+      });
+    </script>
+  </body>
+</html>

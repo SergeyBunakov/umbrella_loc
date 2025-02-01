@@ -1,0 +1,6 @@
+https://github.com/ArkHelvetios/Gllacy/blob/main/js/slider.js
+https://teletype.in/@helvetios/gllacy-javascript-slider
+
+https://tw-elements.com/docs/standard/components/carousel/
+
+https://tw-elements.com/docs/standard/components/carousel/#undefined

@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="uk">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+				content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+			href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+			rel="stylesheet">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<title>Scroll to Top</title>
+	<style>
+      html {
+          scroll-behavior: smooth;
+      }
+
+      #progress {
+          /*background-color: #03cc65;*/
+          position: fixed;
+          bottom: 20px;
+          right: 10px;
+          height: 70px;
+          width: 70px;
+          /*display: grid;*/ /* змінюємо на none після перевірки JS */
+          display: none;
+          place-items: center;
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          border-radius: 50%;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          cursor: pointer;
+      }
+
+      #progress > span {
+          color: #6023f8;
+      }
+
+      #progress-value {
+          display: block;
+          height: calc(100% - 15px);
+          width: calc(100% - 15px);
+          background-color: #fff;
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;;
+          border-radius: 50%;;
+          display: grid;
+          place-items: center;
+          font-size: 35px;
+          color: #001a2e;
+      }
+
+      .progress-bar {
+          background: #03cc65;
+          height: 10px;
+          width: 0%;
+          position: fixed;
+          top: 0;
+          z-index: 1;
+      }
+
+	</style>
+</head>
+<body>
+
+<!-- ProgressBarToTop -->
+<div class="progress-bar" id="progressBar"></div>
+<!-- [END] ProgressBarToTop -->
+
+<h1 class="w-full font-black bg-teal-400 text-white text-[15vmin] text-center mt-8">Back to Top Button</h1>
+<h3 class="w-full bg-teal-300 text-[8vmin] font-black  text-center mb-12">With Scroll Progress</h3>
+<div class="container bg-yellow-300 mx-auto w-[1440] flex flex-wrap items-center justify-around gap-6">
+	<div class="w-[340px] bg-violet-400 text-white ">
+		<p class="p-8">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
+			atque
+			consequuntur
+			cupiditate
+			dolorum
+			fugiat id
+			ipsa ipsum labore maxime minima molestiae, omnis, pariatur perspiciatis repellat sapiente sed ullam. A aliquid
+			consectetur illum magnam mollitia porro quos tempora voluptas. Accusamus dolorum eum iusto maxime natus
+			perferendis
+			quia, sequi? Aliquid autem consequuntur dolorum error fugiat nihil nisi sunt veniam. A ab ad beatae blanditiis
+			culpa
+			cumque debitis dignissimos dolore dolorem et, explicabo harum hic illo impedit iure nemo nisi non odit possimus
+			praesentium quae qui rem sapiente tempora velit vero voluptas? Aut ipsam omnis similique sint? Aperiam commodi
+			doloribus earum eveniet expedita facere facilis fuga inventore ipsa ipsum iste labore laboriosam magni
+			necessitatibus
+			neque pariatur perspiciatis quae quas quasi, ratione unde voluptas.</p>
+	</div>
+	<div class="w-[340px] bg-violet-400 text-white "><p class="p-8">Accusantium amet asperiores autem beatae consequatur
+		cumque ea
+		excepturi
+		explicabo
+		facere
+		fuga
+		ipsa
+		iure,
+		molestiae
+		neque possimus repellat reprehenderit voluptas voluptatum. Accusamus ad aliquid amet, aperiam commodi corporis cum
+		dignissimos dolorum ducimus eligendi, facilis harum incidunt ipsum iste iure laudantium magnam, magni maiores minima
+		minus odit officia optio pariatur perferendis perspiciatis quam qui quia quibusdam quos repellendus sapiente sed
+		sequi
+		similique sit velit vitae voluptate. Deserunt ducimus eveniet iusto magni maiores possimus tenetur totam, veniam
+		vero
+		voluptas! Maiores pariatur quis suscipit voluptates? Ad adipisci amet cumque deleniti, deserunt, dolores ea et hic
+		illo ipsam minima nesciunt quasi quod, saepe sequi similique tempore veniam. Ab animi, aperiam autem dolore dolores
+		hic iure laborum nulla obcaecati pariatur porro rem rerum, sed temporibus!</p></div>
+	<div class="w-[340px] bg-violet-400 text-white "><p class="p-8">A amet facilis hic laboriosam nesciunt rerum
+		voluptate. Aut cum
+		ea error
+		fuga, harum
+		itaque
+		odit
+		omnis
+		optio, porro
+		quam rem, repellendus sint temporibus tenetur ut? Ducimus, iusto molestias? Ab aliquam assumenda atque aut deleniti
+		distinctio dolorem doloribus dolorum ea eaque eos est eum fuga itaque iure labore laboriosam magnam modi molestias
+		nam
+		nemo officiis optio, perferendis placeat quaerat quis quos repudiandae tenetur totam voluptatum? Animi aspernatur
+		autem blanditiis deleniti deserunt dicta doloremque doloribus esse exercitationem illo laudantium molestiae
+		molestias
+		natus nesciunt nobis, nostrum officia pariatur provident quas quia quibusdam repellendus sequi sunt, tempora
+		temporibus tenetur ut veniam! Ad aliquam architecto culpa cum deleniti deserunt eius eos, harum maxime natus nihil
+		officiis perspiciatis, quasi, sequi sint sit temporibus ullam voluptas?</p></div>
+	<div class="w-[340px] bg-violet-400 text-white "><p class="p-8">Adipisci aliquam animi asperiores atque aut
+		consectetur
+		consequatur
+		delectus
+		doloremque
+		ducimus
+		et
+		eum
+		explicabo iure
+		laudantium molestiae nihil praesentium quae quas quibusdam, quo quos repellendus similique soluta veritatis voluptas
+		voluptate voluptatem voluptatibus! Accusantium, atque deserunt eaque enim exercitationem impedit iure libero nam
+		nesciunt nulla odio optio perferendis placeat possimus quaerat quam repudiandae, saepe sequi suscipit unde!
+		Accusantium adipisci commodi, culpa deleniti dicta dolor doloremque dolores error excepturi inventore ipsum
+		necessitatibus nemo odio omnis praesentium qui ullam. Alias aliquid at beatae commodi consectetur culpa, doloremque
+		eveniet exercitationem, facere fugit inventore labore nesciunt optio pariatur quidem quisquam sint? Alias earum fuga
+		hic magni omnis reprehenderit suscipit. Aspernatur atque cumque debitis dignissimos eligendi ipsa, laborum, magnam
+		mollitia nemo non, quasi recusandae rem repellendus.</p></div>
+	<div class="w-[340px] bg-violet-400 text-white "><p class="p-8">Accusantium aut dignissimos eligendi eum ipsam nihil
+		nobis
+		nostrum odio
+		omnis,
+		pariatur
+		perspiciatis
+		provident, quae
+		quaerat sint tempora vero vitae. Aperiam at aut dicta odio odit rem voluptatibus. Aperiam architecto eaque eum
+		facilis
+		in molestiae nisi nostrum provident qui reiciendis sequi similique, sunt, totam unde voluptatibus. Accusamus animi
+		culpa, debitis deleniti magni odio optio quas. Dignissimos dolore dolorum fuga, harum laudantium molestias
+		necessitatibus nihil quasi quidem quo quos ullam voluptate voluptatem! Consequuntur dolorem, enim id laborum
+		quisquam
+		quod? Culpa impedit itaque, molestiae nobis sunt voluptatem. Aut blanditiis cum deserunt eveniet odio optio repellat
+		voluptatem? Accusamus dolore dolorem dolorum ea eveniet excepturi expedita fuga, hic libero modi mollitia porro
+		quae,
+		quisquam quod reiciendis, reprehenderit soluta. Aspernatur ducimus ex libero pariatur placeat.</p></div>
+
+	<div class="w-[340px] bg-violet-400 text-white "><p class="p-8">Accusantium aut dignissimos eligendi eum ipsam nihil
+		nobis
+		nostrum odio
+		omnis,
+		pariatur
+		perspiciatis
+		provident, quae
+		quaerat sint tempora vero vitae. Aperiam at aut dicta odio odit rem voluptatibus. Aperiam architecto eaque eum
+		facilis
+		in molestiae nisi nostrum provident qui reiciendis sequi similique, sunt, totam unde voluptatibus. Accusamus animi
+		culpa, debitis deleniti magni odio optio quas. Dignissimos dolore dolorum fuga, harum laudantium molestias
+		necessitatibus nihil quasi quidem quo quos ullam voluptate voluptatem! Consequuntur dolorem, enim id laborum
+		quisquam
+		quod? Culpa impedit itaque, molestiae nobis sunt voluptatem. Aut blanditiis cum deserunt eveniet odio optio repellat
+		voluptatem? Accusamus dolore dolorem dolorum ea eveniet excepturi expedita fuga, hic libero modi mollitia porro
+		quae,
+		quisquam quod reiciendis, reprehenderit soluta. Aspernatur ducimus ex libero pariatur placeat.</p></div>
+
+	<div class="w-[340px] bg-violet-400 text-white "><p class="p-8">Accusantium aut dignissimos eligendi eum ipsam nihil
+		nobis
+		nostrum odio
+		omnis,
+		pariatur
+		perspiciatis
+		provident, quae
+		quaerat sint tempora vero vitae. Aperiam at aut dicta odio odit rem voluptatibus. Aperiam architecto eaque eum
+		facilis
+		in molestiae nisi nostrum provident qui reiciendis sequi similique, sunt, totam unde voluptatibus. Accusamus animi
+		culpa, debitis deleniti magni odio optio quas. Dignissimos dolore dolorum fuga, harum laudantium molestias
+		necessitatibus nihil quasi quidem quo quos ullam voluptate voluptatem! Consequuntur dolorem, enim id laborum
+		quisquam
+		quod? Culpa impedit itaque, molestiae nobis sunt voluptatem. Aut blanditiis cum deserunt eveniet odio optio repellat
+		voluptatem? Accusamus dolore dolorem dolorum ea eveniet excepturi expedita fuga, hic libero modi mollitia porro
+		quae,
+		quisquam quod reiciendis, reprehenderit soluta. Aspernatur ducimus ex libero pariatur placeat.</p></div>
+
+	<div class="w-[340px] bg-violet-400 text-white "><p class="p-8">Accusantium aut dignissimos eligendi eum ipsam nihil
+		nobis
+		nostrum odio
+		omnis,
+		pariatur
+		perspiciatis
+		provident, quae
+		quaerat sint tempora vero vitae. Aperiam at aut dicta odio odit rem voluptatibus. Aperiam architecto eaque eum
+		facilis
+		in molestiae nisi nostrum provident qui reiciendis sequi similique, sunt, totam unde voluptatibus. Accusamus animi
+		culpa, debitis deleniti magni odio optio quas. Dignissimos dolore dolorum fuga, harum laudantium molestias
+		necessitatibus nihil quasi quidem quo quos ullam voluptate voluptatem! Consequuntur dolorem, enim id laborum
+		quisquam
+		quod? Culpa impedit itaque, molestiae nobis sunt voluptatem. Aut blanditiis cum deserunt eveniet odio optio repellat
+		voluptatem? Accusamus dolore dolorem dolorum ea eveniet excepturi expedita fuga, hic libero modi mollitia porro
+		quae,
+		quisquam quod reiciendis, reprehenderit soluta. Aspernatur ducimus ex libero pariatur placeat.</p></div>
+
+	<div class="w-[340px] bg-violet-400 text-white "><p class="p-8">Accusantium aut dignissimos eligendi eum ipsam nihil
+		nobis
+		nostrum odio
+		omnis,
+		pariatur
+		perspiciatis
+		provident, quae
+		quaerat sint tempora vero vitae. Aperiam at aut dicta odio odit rem voluptatibus. Aperiam architecto eaque eum
+		facilis
+		in molestiae nisi nostrum provident qui reiciendis sequi similique, sunt, totam unde voluptatibus. Accusamus animi
+		culpa, debitis deleniti magni odio optio quas. Dignissimos dolore dolorum fuga, harum laudantium molestias
+		necessitatibus nihil quasi quidem quo quos ullam voluptate voluptatem! Consequuntur dolorem, enim id laborum
+		quisquam
+		quod? Culpa impedit itaque, molestiae nobis sunt voluptatem. Aut blanditiis cum deserunt eveniet odio optio repellat
+		voluptatem? Accusamus dolore dolorem dolorum ea eveniet excepturi expedita fuga, hic libero modi mollitia porro
+		quae,
+		quisquam quod reiciendis, reprehenderit soluta. Aspernatur ducimus ex libero pariatur placeat.</p></div>
+
+	<div class="w-[340px] bg-violet-400 text-white "><p class="p-8">Accusantium aut dignissimos eligendi eum ipsam nihil
+		nobis
+		nostrum odio
+		omnis,
+		pariatur
+		perspiciatis
+		provident, quae
+		quaerat sint tempora vero vitae. Aperiam at aut dicta odio odit rem voluptatibus. Aperiam architecto eaque eum
+		facilis
+		in molestiae nisi nostrum provident qui reiciendis sequi similique, sunt, totam unde voluptatibus. Accusamus animi
+		culpa, debitis deleniti magni odio optio quas. Dignissimos dolore dolorum fuga, harum laudantium molestias
+		necessitatibus nihil quasi quidem quo quos ullam voluptate voluptatem! Consequuntur dolorem, enim id laborum
+		quisquam
+		quod? Culpa impedit itaque, molestiae nobis sunt voluptatem. Aut blanditiis cum deserunt eveniet odio optio repellat
+		voluptatem? Accusamus dolore dolorem dolorum ea eveniet excepturi expedita fuga, hic libero modi mollitia porro
+		quae,
+		quisquam quod reiciendis, reprehenderit soluta. Aspernatur ducimus ex libero pariatur placeat.</p></div>
+</div>
+
+<!-- Scroll to Top Button -->
+<div id="progress">
+	<span id="progress-value">&#x1F815;</span>
+</div>
+<!-- [END] Scroll to Top Button -->
+
+<script>
+    <!--	Scroll to Top Button	-->
+    let calcScrollValue = () => {
+        let scrollProgress = document.getElementById("progress");
+        let progressValue = document.getElementById("progress-value");
+        let pos = document.documentElement.scrollTop;
+        // console.log(pos);
+        let calcHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        // console.log(calcHeight);
+        let scrollValue = Math.round((pos * 100) / calcHeight);
+        // console.log(scrollValue);
+        if (pos > 100) {
+            scrollProgress.style.display = "grid";
+        } else {
+            scrollProgress.style.display = "none";
+        }
+        scrollProgress.addEventListener("click", () => {
+            document.documentElement.scrollTop = 0;
+        });
+        scrollProgress.style.background = `conic-gradient(#03cc65 ${scrollValue}%, #d7d7d7 ${scrollValue}%)`;
+    }
+
+    window.onscroll = calcScrollValue;
+    window.onload = calcScrollValue;
+
+    //     ProgressBarTop
+    window.addEventListener('scroll', handleScroll);
+
+    function handleScroll() {
+        let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        let scrolled = (winScroll / height) * 100;
+
+        document.getElementById("progressBar").style.width = scrolled + "%";
+    }
+</script>
+
+</body>
+</html>
